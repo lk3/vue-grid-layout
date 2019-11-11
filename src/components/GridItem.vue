@@ -1,5 +1,6 @@
 <template>
     <div ref="item"
+         id="lucho"
          class="vue-grid-item"
          :class="classObj"
          :style="style"
