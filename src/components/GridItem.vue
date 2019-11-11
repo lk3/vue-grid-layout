@@ -4,7 +4,15 @@
          class="vue-grid-item"
          :class="classObj"
          :style="style">
-        <slot></slot>
+        <div class="grid-item-title">
+            <div style="float: right;">
+                <a href="#" @click="removeWidget(id)">[x]</a>
+            </div>
+            {{widgetTitle}}
+        </div>
+        <div class="grid-item-content">
+            <slot></slot>
+        </div>
         <span v-if="resizableAndNotStatic" ref="handle" :class="resizableHandleClass"></span>
         <!--<span v-if="draggable" ref="dragHandle" class="vue-draggable-handle"></span>-->
     </div>
@@ -14,6 +22,25 @@
         transition: all 200ms ease;
         transition-property: left, top, right;
         /* add right for rtl */
+    }
+
+    .vue-grid-item .grid-item-title {
+        width: 100%;
+        padding: 2px;
+        background-color: #666;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+        position: relative;
+    }
+
+    .vue-grid-item .grid-item-content {
+        width: 100%;
+        padding: 2px;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+        box-sizing: border-box;         /* Opera/IE 8+ */
+        position: relative;
     }
 
     .vue-grid-item.no-touch {
@@ -176,6 +203,9 @@
             i: {
                 required: true
             },
+            title: {
+                required: true
+            },
             dragIgnoreFrom: {
                 type: String,
                 required: false,
@@ -198,6 +228,7 @@
                 id: this.i,
                 //id: Math.random().toString(36).substring(2, 15) +
                 //Math.random().toString(36).substring(2, 15),
+                widgetTitle: this.title,
                 cols: 1,
                 containerWidth: 100,
                 rowHeight: 30,
@@ -416,6 +447,9 @@
             }
         },
         methods: {
+            removeWidget: function(id) {
+                this.$eventHub.$emit('event-widget-remove', id)
+            },
             createStyle: function () {
                 if (this.x + this.w > this.cols) {
                     this.innerX = 0;
