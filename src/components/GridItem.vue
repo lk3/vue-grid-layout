@@ -176,6 +176,9 @@
             i: {
                 required: true
             },
+            type: {
+                required: true
+            },
             dragIgnoreFrom: {
                 type: String,
                 required: false,
@@ -195,8 +198,8 @@
         inject: ["eventBus"],
         data: function () {
             return {
-                id: Math.random().toString(36).substring(2, 15) +
-                Math.random().toString(36).substring(2, 15),
+                id: (this.type === "placeholder" ? "" : Math.random().toString(36).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15)),
                 cols: 1,
                 containerWidth: 100,
                 rowHeight: 30,

@@ -1,7 +1,7 @@
 <template>
     <div ref="item" class="vue-grid-layout" :style="mergedStyle">
         <slot></slot>
-        <grid-item class="vue-grid-placeholder"
+        <grid-item :type="placeholder" class="vue-grid-placeholder"
                    v-show="isDragging"
                    :x="placeholder.x"
                    :y="placeholder.y"
