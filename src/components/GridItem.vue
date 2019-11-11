@@ -1,6 +1,6 @@
 <template>
     <div ref="item"
-         id="lucho"
+         :id="id"
          class="vue-grid-item"
          :class="classObj"
          :style="style">
@@ -195,6 +195,8 @@
         inject: ["eventBus"],
         data: function () {
             return {
+                id: Math.random().toString(36).substring(2, 15) +
+                Math.random().toString(36).substring(2, 15),
                 cols: 1,
                 containerWidth: 100,
                 rowHeight: 30,
