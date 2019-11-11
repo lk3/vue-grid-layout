@@ -176,9 +176,6 @@
             i: {
                 required: true
             },
-            type: {
-                required: true
-            },
             dragIgnoreFrom: {
                 type: String,
                 required: false,
@@ -198,8 +195,9 @@
         inject: ["eventBus"],
         data: function () {
             return {
-                id: (this.type === "placeholder" ? "" : Math.random().toString(36).substring(2, 15) +
-                Math.random().toString(36).substring(2, 15)),
+                id: "tile-" + this.i,
+                //id: Math.random().toString(36).substring(2, 15) +
+                //Math.random().toString(36).substring(2, 15),
                 cols: 1,
                 containerWidth: 100,
                 rowHeight: 30,
@@ -431,8 +429,8 @@
 
                 if (this.isDragging) {
                     pos.top = this.dragging.top;
-//                    Add rtl support
-                    if (this.renderRtl) {
+
+                    if (this.renderRtl) { //                    Add rtl support
                         pos.right = this.dragging.left;
                     } else {
                         pos.left = this.dragging.left;
@@ -446,16 +444,16 @@
                 let style;
                 // CSS Transforms support (default)
                 if (this.useCssTransforms) {
-//                    Add rtl support
-                    if (this.renderRtl) {
+
+                    if (this.renderRtl) { //                    Add rtl support
                         style = setTransformRtl(pos.top, pos.right, pos.width, pos.height);
                     } else {
                         style = setTransform(pos.top, pos.left, pos.width, pos.height);
                     }
 
                 } else { // top,left (slow)
-//                    Add rtl support
-                    if (this.renderRtl) {
+
+                    if (this.renderRtl) { //                    Add rtl support
                         style = setTopRight(pos.top, pos.right, pos.width, pos.height);
                     } else {
                         style = setTopLeft(pos.top, pos.left, pos.width, pos.height);
