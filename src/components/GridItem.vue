@@ -4,13 +4,13 @@
          class="vue-grid-item"
          :class="classObj"
          :style="style">
-        <div class="grid-item-title">
+        <div class="vue-grid-item-title">
             <div style="float: right;">
-                <a href="#" @click="removeWidget(id)">[x]</a>
+                <a href="#" @click="removeWidget(id)" class="vue-grid-item-remove">[x]</a>
             </div>
             {{widgetTitle}}
         </div>
-        <div class="grid-item-content">
+        <div class="vue-grid-item-content">
             <slot></slot>
         </div>
         <span v-if="resizableAndNotStatic" ref="handle" :class="resizableHandleClass"></span>
@@ -22,25 +22,6 @@
         transition: all 200ms ease;
         transition-property: left, top, right;
         /* add right for rtl */
-    }
-
-    .vue-grid-item .grid-item-title {
-        width: 100%;
-        padding: 2px;
-        background-color: #666;
-        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-        box-sizing: border-box;         /* Opera/IE 8+ */
-        position: relative;
-    }
-
-    .vue-grid-item .grid-item-content {
-        width: 100%;
-        padding: 2px;
-        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-        -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-        box-sizing: border-box;         /* Opera/IE 8+ */
-        position: relative;
     }
 
     .vue-grid-item.no-touch {
