@@ -195,7 +195,7 @@
         inject: ["eventBus"],
         data: function () {
             return {
-                id: "tile-" + this.i,
+                id: this.i,
                 //id: Math.random().toString(36).substring(2, 15) +
                 //Math.random().toString(36).substring(2, 15),
                 cols: 1,
