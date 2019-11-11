@@ -7388,6 +7388,7 @@ Object.keys(VueGridLayout).forEach(function (name) {
 /* harmony default export */ var components = (VueGridLayout);
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport ResponsiveGridLayout */__webpack_require__.d(__webpack_exports__, "ResponsiveGridLayout", function() { return ResponsiveGridLayout; });
 /* concated harmony reexport GridLayout */__webpack_require__.d(__webpack_exports__, "GridLayout", function() { return GridLayout; });
 /* concated harmony reexport GridItem */__webpack_require__.d(__webpack_exports__, "GridItem", function() { return GridItem; });
 
