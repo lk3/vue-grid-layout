@@ -17,4 +17,4 @@ Object.keys(VueGridLayout).forEach(name => {
 });
 
 export default VueGridLayout;
-export { GridLayout, GridItem };
+export { ResponsiveGridLayout, GridLayout, GridItem };
