@@ -7,7 +7,8 @@
                    :y="placeholder.y"
                    :w="placeholder.w"
                    :h="placeholder.h"
-                   :i="placeholder.i"></grid-item>
+                   :i="placeholder.i"
+                   :title="placeholder.title"></grid-item>
     </div>
 </template>
 <style>
