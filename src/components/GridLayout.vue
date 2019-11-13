@@ -48,7 +48,7 @@
                 type: Number,
                 default: 12
             },
-            colWidth: {
+            colWidth: { // if this is set, will try to keep columns at this size
                 type: Number,
                 required: false,
                 default: 60
@@ -120,6 +120,7 @@
         },
         data: function () {
             return {
+                usedCols: (this.colNum ? this.colNum : 0),
                 width: null,
                 mergedStyle: {},
                 lastLayoutLength: 0,
@@ -237,6 +238,8 @@
                 this.layoutUpdate();
             },
             colNum: function (val) {
+                // Added
+                val = (this.colWidth ? this.usedCols : val);
                 this.eventBus.$emit("setColNum", val);
             },
             rowHeight: function() {
@@ -251,7 +254,9 @@
             responsive() {
                 if (!this.responsive) {
                     this.$emit('update:layout', this.originalLayout);
-                    this.eventBus.$emit("setColNum", this.colNum);
+                    // Added
+                    let val = (this.colWidth ? this.usedCols : this.colNum);
+                    this.eventBus.$emit("setColNum", val);
                 }
                 this.onWindowResize();
             },
@@ -403,9 +408,10 @@
             // Added: compute number of cols to keep them same width
             computeCols() {
                 let c = Math.floor((window.innerWidth - this.margin[0]) / (this.colWidth + this.margin[0]))
-                this.colNum = (c > this.maxCols ? this.maxCols : c);
-                this.colNum = (c < this.minCols ? this.minCols : c);
-                this.eventBus.$emit("setColNum", this.colNum);
+                c = (c > this.maxCols ? this.maxCols : c);
+                c = (c < this.minCols ? this.minCols : c);
+                this.usedCols = c;
+                this.eventBus.$emit("setColNum", this.usedCols);
             },
 
             // finds or generates new layouts for set breakpoints
