@@ -307,6 +307,7 @@
             this.eventBus.$off('directionchange', self.directionchangeHandler);
             this.eventBus.$off('setColNum', self.setColNum);
             this.interactObj.unset() // destroy interact intance
+            this.$eventHub.$off('event-widget-remove')
         },
         mounted: function () {
             this.cols = this.$parent.colNum;
