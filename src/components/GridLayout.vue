@@ -48,6 +48,21 @@
                 type: Number,
                 default: 12
             },
+            colWidth: {
+                type: Number,
+                required: false,
+                default: 60
+            },
+            minCols: {
+                type: Number,
+                required: false,
+                default: 12
+            },
+            maxCols: {
+                type: Number,
+                required: false,
+                default: 20
+            },
             rowHeight: {
                 type: Number,
                 default: 150
@@ -168,6 +183,9 @@
                     compact(self.layout, self.verticalCompact);
 
                     self.updateHeight();
+
+                    self.computeCols();
+
                     self.$nextTick(function () {
                         this.erd = elementResizeDetectorMaker({
                             strategy: "scroll", //<- For ultra performance.
@@ -278,7 +296,9 @@
             onWindowResize: function () {
                 if (this.$refs !== null && this.$refs.item !== null && this.$refs.item !== undefined) {
                     this.width = this.$refs.item.offsetWidth;
+                    //console.log('this.width', this.width)
                 }
+                this.computeCols();
                 this.eventBus.$emit("resizeEvent");
             },
             containerHeight: function () {
@@ -378,6 +398,14 @@
                 this.updateHeight();
 
                 if (eventName === 'resizeend') this.$emit('layout-updated', this.layout);
+            },
+
+            // Added: compute number of cols to keep them same width
+            computeCols() {
+                let c = Math.floor((window.innerWidth - this.margin[0]) / (this.colWidth + this.margin[0]))
+                this.cols = (c > this.maxCols ? this.maxCols : c);
+                this.cols = (c < this.minCols ? this.minCols : c);
+                this.eventBus.$emit("setColNum", this.cols);
             },
 
             // finds or generates new layouts for set breakpoints
