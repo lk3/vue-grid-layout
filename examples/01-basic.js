@@ -35,6 +35,7 @@ new Vue({
         draggable: true,
         resizable: true,
         index: 0
+        //initCols: 16
     },
     mounted: function () {
         let self = this
@@ -43,6 +44,14 @@ new Vue({
           console.log("removing", data)
           self.layout.splice(data, 1) // this works because we use grid item index as its ID
         })
+        //window.addEventListener('resize', function () {
+        //    console.log(window.innerWidth)
+        //    self.layoutCols()
+            //onLoadedImg(document.getElementById("container"), function() {
+            //    setCardWidth()
+            //    waterfall('.grid')
+            //})
+        //})
     },
     methods: {
         itemTitle(item) {
@@ -51,7 +60,12 @@ new Vue({
                 result += " - Static";
             }
             return result;
-        }
+        },
+/*        layoutCols() {
+            var cols = Math.floor(window.innerWidth/70)
+            console.log(cols)
+            this.initCols = cols
+        },*/
 /*
         increaseWidth: function(item) {
             var width = document.getElementById("content").offsetWidth;
