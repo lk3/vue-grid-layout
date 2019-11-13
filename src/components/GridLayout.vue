@@ -48,16 +48,19 @@
                 type: Number,
                 default: 12
             },
+            // Added
             colWidth: { // if this is set, will try to keep columns at this size
                 type: Number,
                 required: false,
-                default: 60
+                default: null
             },
+            // Added
             minCols: {
                 type: Number,
                 required: false,
                 default: 12
             },
+            // Added
             maxCols: {
                 type: Number,
                 required: false,
@@ -185,7 +188,8 @@
 
                     self.updateHeight();
 
-                    self.computeCols();
+                    // Added
+                    //self.computeCols();
 
                     self.$nextTick(function () {
                         this.erd = elementResizeDetectorMaker({
@@ -239,7 +243,7 @@
             },
             colNum: function (val) {
                 // Added
-                val = (this.colWidth ? this.usedCols : val);
+                //val = (this.colWidth ? this.usedCols : val);
                 this.eventBus.$emit("setColNum", val);
             },
             rowHeight: function() {
@@ -255,8 +259,8 @@
                 if (!this.responsive) {
                     this.$emit('update:layout', this.originalLayout);
                     // Added
-                    let val = (this.colWidth ? this.usedCols : this.colNum);
-                    this.eventBus.$emit("setColNum", val);
+                    //let val = (this.colWidth ? this.usedCols : this.colNum);
+                    this.eventBus.$emit("setColNum", this.colNum);
                 }
                 this.onWindowResize();
             },

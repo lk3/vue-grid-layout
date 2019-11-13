@@ -125,10 +125,11 @@
              type: Number,
              required: true
              },*/
+             // Added
              colWidth: {
                 type: Number,
                 required: false,
-                default: 60
+                default: null
              },
             isDraggable: {
                 type: Boolean,
@@ -720,9 +721,9 @@
             // Added: compute col as fixed value
             // Helper for generating column width
             calcColWidth() {
-                if (this.colWidth) {
-                    return this.coldWidth;
-                }
+                //if (this.colWidth) {
+                //    return this.coldWidth;
+                //}
                 const colWidth = (this.containerWidth - (this.margin[0] * (this.cols + 1))) / this.cols;
                 //console.log("### COLS=" + this.cols + " COL WIDTH=" + this.colWidth + " MARGIN " + this.margin[0]);
                 return colWidth;
