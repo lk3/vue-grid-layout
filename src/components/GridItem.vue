@@ -125,6 +125,11 @@
              type: Number,
              required: true
              },*/
+             colWidth: {
+                type: Number,
+                required: false,
+                default: 60
+             },
             isDraggable: {
                 type: Boolean,
                 required: false,
@@ -712,11 +717,12 @@
 
                 return {x, y};
             },
+            // Added: compute col as fixed value
             // Helper for generating column width
             calcColWidth() {
-                const colWidth = (this.containerWidth - (this.margin[0] * (this.cols + 1))) / this.cols;
-               // console.log("### COLS=" + this.cols + " COL WIDTH=" + colWidth + " MARGIN " + this.margin[0]);
-                return colWidth;
+                //const colWidth = (this.containerWidth - (this.margin[0] * (this.cols + 1))) / this.cols;
+                //console.log("### COLS=" + this.cols + " COL WIDTH=" + this.colWidth + " MARGIN " + this.margin[0]);
+                return this.colWidth;
             },
 
             /**
