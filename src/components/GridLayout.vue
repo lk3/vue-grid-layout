@@ -49,7 +49,7 @@
                 default: 12
             },
             // Added
-            colWidth: { // if this is set, will try to keep columns at this size
+/*            colWidth: { // if this is set, will try to keep columns at this size
                 type: Number,
                 required: false,
                 default: null
@@ -65,7 +65,7 @@
                 type: Number,
                 required: false,
                 default: 20
-            },
+            },*/
             rowHeight: {
                 type: Number,
                 default: 150
@@ -307,7 +307,8 @@
                     this.width = this.$refs.item.offsetWidth;
                     //console.log('this.width', this.width)
                 }
-                this.computeCols();
+                // Added
+                //this.computeCols();
                 this.eventBus.$emit("resizeEvent");
             },
             containerHeight: function () {
