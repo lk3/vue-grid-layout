@@ -403,9 +403,9 @@
             // Added: compute number of cols to keep them same width
             computeCols() {
                 let c = Math.floor((window.innerWidth - this.margin[0]) / (this.colWidth + this.margin[0]))
-                this.cols = (c > this.maxCols ? this.maxCols : c);
-                this.cols = (c < this.minCols ? this.minCols : c);
-                this.eventBus.$emit("setColNum", this.cols);
+                this.colNum = (c > this.maxCols ? this.maxCols : c);
+                this.colNum = (c < this.minCols ? this.minCols : c);
+                this.eventBus.$emit("setColNum", this.colNum);
             },
 
             // finds or generates new layouts for set breakpoints
