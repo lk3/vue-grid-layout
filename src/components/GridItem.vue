@@ -240,7 +240,9 @@
                 innerX: this.x,
                 innerY: this.y,
                 innerW: this.w,
-                innerH: this.h
+                innerH: this.h,
+                lastRemovedId: null
+
             }
         },
         created () {
@@ -307,7 +309,6 @@
             this.eventBus.$off('directionchange', self.directionchangeHandler);
             this.eventBus.$off('setColNum', self.setColNum);
             this.interactObj.unset() // destroy interact intance
-            this.$eventHub.$off('event-widget-remove')
         },
         mounted: function () {
             this.cols = this.$parent.colNum;
@@ -430,6 +431,10 @@
         },
         methods: {
             removeWidget: function(id) {
+                if (this.lastRemovedId === id) {
+                    return false
+                }
+                this.lastRemovedId = id
                 this.$eventHub.$emit('event-widget-remove', id)
             },
             createStyle: function () {
