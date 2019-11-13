@@ -6350,12 +6350,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var GridItem = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1659a6dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridLayout.vue?vue&type=template&id=39f3d8e2&
-var GridLayoutvue_type_template_id_39f3d8e2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-layout",style:(_vm.mergedStyle)},[_vm._t("default"),_c('grid-item',{directives:[{name:"show",rawName:"v-show",value:(_vm.isDragging),expression:"isDragging"}],staticClass:"vue-grid-placeholder",attrs:{"x":_vm.placeholder.x,"y":_vm.placeholder.y,"w":_vm.placeholder.w,"h":_vm.placeholder.h,"i":_vm.placeholder.i,"title":_vm.placeholder.title}})],2)}
-var GridLayoutvue_type_template_id_39f3d8e2_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1659a6dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridLayout.vue?vue&type=template&id=071dc194&
+var GridLayoutvue_type_template_id_071dc194_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-layout",style:(_vm.mergedStyle)},[_vm._t("default"),_c('grid-item',{directives:[{name:"show",rawName:"v-show",value:(_vm.isDragging),expression:"isDragging"}],staticClass:"vue-grid-placeholder",attrs:{"x":_vm.placeholder.x,"y":_vm.placeholder.y,"w":_vm.placeholder.w,"h":_vm.placeholder.h,"i":_vm.placeholder.i,"title":_vm.placeholder.title}})],2)}
+var GridLayoutvue_type_template_id_071dc194_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/GridLayout.vue?vue&type=template&id=39f3d8e2&
+// CONCATENATED MODULE: ./src/components/GridLayout.vue?vue&type=template&id=071dc194&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.object.get-own-property-descriptors.js
 var es7_object_get_own_property_descriptors = __webpack_require__("8e6e");
@@ -6616,24 +6616,24 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
       default: 12
     },
     // Added
-    colWidth: {
-      // if this is set, will try to keep columns at this size
-      type: Number,
-      required: false,
-      default: null
-    },
-    // Added
-    minCols: {
-      type: Number,
-      required: false,
-      default: 12
-    },
-    // Added
-    maxCols: {
-      type: Number,
-      required: false,
-      default: 20
-    },
+
+    /*            colWidth: { // if this is set, will try to keep columns at this size
+                    type: Number,
+                    required: false,
+                    default: null
+                },
+                // Added
+                minCols: {
+                    type: Number,
+                    required: false,
+                    default: 12
+                },
+                // Added
+                maxCols: {
+                    type: Number,
+                    required: false,
+                    default: 20
+                },*/
     rowHeight: {
       type: Number,
       default: 150
@@ -6888,9 +6888,10 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
     onWindowResize: function onWindowResize() {
       if (this.$refs !== null && this.$refs.item !== null && this.$refs.item !== undefined) {
         this.width = this.$refs.item.offsetWidth; //console.log('this.width', this.width)
-      }
+      } // Added
+      //this.computeCols();
 
-      this.computeCols();
+
       this.eventBus.$emit("resizeEvent");
     },
     containerHeight: function containerHeight() {
@@ -7059,8 +7060,8 @@ var GridLayoutvue_type_style_index_0_lang_css_ = __webpack_require__("e279");
 
 var GridLayout_component = normalizeComponent(
   components_GridLayoutvue_type_script_lang_js_,
-  GridLayoutvue_type_template_id_39f3d8e2_render,
-  GridLayoutvue_type_template_id_39f3d8e2_staticRenderFns,
+  GridLayoutvue_type_template_id_071dc194_render,
+  GridLayoutvue_type_template_id_071dc194_staticRenderFns,
   false,
   null,
   null,
