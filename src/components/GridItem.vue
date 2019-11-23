@@ -438,6 +438,9 @@
         },
         methods: {
             removeWidget: function(id) {
+                if (this.id !== id) {
+                    return false
+                }
                 if (this.lastRemovedId === id) {
                     return false
                 }
