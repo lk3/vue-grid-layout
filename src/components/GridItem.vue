@@ -300,6 +300,7 @@
             this.eventBus.$on('setMaxRows', self.setMaxRowsHandler);
             this.eventBus.$on('directionchange', self.directionchangeHandler);
             this.eventBus.$on('setColNum', self.setColNum)
+            this.eventBus.$on('killComponent', self.removeWidget)
 
             this.rtl = getDocumentDir() === 'rtl';
         },
