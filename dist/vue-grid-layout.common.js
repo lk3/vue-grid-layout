@@ -4466,12 +4466,12 @@ var web_dom_iterable = __webpack_require__("ac6a");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1659a6dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridItem.vue?vue&type=template&id=1a8133d3&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1659a6dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridItem.vue?vue&type=template&id=b5795b06&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-item",class:_vm.classObj,style:(_vm.style),attrs:{"id":_vm.id}},[_c('div',{staticClass:"vue-grid-item-title"},[_c('div',{staticStyle:{"float":"right"}},[_c('a',{staticClass:"vue-grid-item-remove",attrs:{"href":"#"},on:{"click":function($event){return _vm.removeWidget(_vm.id)}}},[_vm._v("[x]")])]),_vm._v("\n        "+_vm._s(_vm.widgetTitle)+"\n    ")]),_c('div',{staticClass:"vue-grid-item-content"},[_vm._t("default")],2),(_vm.resizableAndNotStatic)?_c('span',{ref:"handle",class:_vm.resizableHandleClass}):_vm._e()])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/GridItem.vue?vue&type=template&id=1a8133d3&
+// CONCATENATED MODULE: ./src/components/GridItem.vue?vue&type=template&id=b5795b06&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
 var es6_regexp_match = __webpack_require__("4917");
@@ -5451,10 +5451,11 @@ var interact = __webpack_require__("fb3a");
       required: false,
       default: null
     },
-    useCssTransforms: {
-      type: Boolean,
-      required: true
-    },
+
+    /*            useCssTransforms: {
+                 type: Boolean,
+                 required: true
+                 },*/
     static: {
       type: Boolean,
       required: false,
@@ -5532,7 +5533,7 @@ var interact = __webpack_require__("fb3a");
       maxRows: Infinity,
       draggable: null,
       resizable: null,
-      cssTransforms: this.useCssTransforms,
+      //cssTransforms: this.useCssTransforms,
       allowFrom: this.dragAllowFrom,
       isDragging: false,
       dragging: null,
