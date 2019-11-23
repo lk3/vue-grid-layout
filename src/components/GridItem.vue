@@ -222,7 +222,7 @@
                 maxRows: Infinity,
                 draggable: null,
                 resizable: null,
-                useCssTransforms: true,
+                cssTransforms: this.useCssTransforms,
 
                 isDragging: false,
                 dragging: null,
@@ -331,7 +331,7 @@
             } else {
                 this.resizable = this.isResizable;
             }
-            this.useCssTransforms = this.$parent.useCssTransforms;
+            this.cssTransforms = this.$parent.cssTransforms;
             this.createStyle();
         },
         watch: {
@@ -408,7 +408,7 @@
                     'static': this.static,
                     'resizing' : this.isResizing,
                     'vue-draggable-dragging' : this.isDragging,
-                    'cssTransforms' : this.useCssTransforms,
+                    'cssTransforms' : this.cssTransforms,
                     'render-rtl' : this.renderRtl,
                     'disable-userselect': this.isDragging,
                     'no-touch': this.isAndroid && this.draggableOrResizableAndNotStatic
@@ -469,7 +469,7 @@
 
                 let style;
                 // CSS Transforms support (default)
-                if (this.useCssTransforms) {
+                if (this.cssTransforms) {
 
                     if (this.renderRtl) { //                    Add rtl support
                         style = setTransformRtl(pos.top, pos.right, pos.width, pos.height);
