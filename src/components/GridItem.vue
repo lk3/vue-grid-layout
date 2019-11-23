@@ -141,11 +141,10 @@
                 required: false,
                 default: null
             },
-            /*useCssTransforms: {
+            useCssTransforms: {
              type: Boolean,
              required: true
              },
-             */
             static: {
                 type: Boolean,
                 required: false,
