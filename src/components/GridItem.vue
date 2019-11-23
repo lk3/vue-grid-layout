@@ -200,7 +200,7 @@
             dragAllowFrom: {
                 type: String,
                 required: false,
-                default: null
+                default: '.vue-grid-item-title'
             },
             resizeIgnoreFrom: {
                 type: String,
@@ -223,6 +223,7 @@
                 draggable: null,
                 resizable: null,
                 cssTransforms: this.useCssTransforms,
+                allowFrom: this.dragAllowFrom,
 
                 isDragging: false,
                 dragging: null,
@@ -765,7 +766,7 @@
                 if (this.draggable && !this.static) {
                     const opts = {
                         ignoreFrom: this.dragIgnoreFrom,
-                        allowFrom: this.dragAllowFrom
+                        allowFrom: this.allowFrom
                     };
                     this.interactObj.draggable(opts);
                     /*this.interactObj.draggable({allowFrom: '.vue-draggable-handle'});*/
