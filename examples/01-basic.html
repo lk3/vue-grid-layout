@@ -33,8 +33,12 @@
             <input type="checkbox" v-model="draggable"/> Draggable
             <input type="checkbox" v-model="resizable"/> Resizable
             <br/>
-            <grid-layout :layout="layout"
-                         :col-num="12"
+            <grid-layout :layout.sync="layout"
+                        :auto-size="false"
+                         :col-num="16"
+                         :col-width="60"
+                        :min-cols="16"
+                        :max-cols="20"
                          :row-height="30"
                          :is-draggable="draggable"
                          :is-resizable="resizable"
@@ -42,13 +46,13 @@
                          :use-css-transforms="true">
                 <grid-item v-for="item in layout"
                            :static="item.static"
-                           :x="item.x"
-                           :y="item.y"
-                           :w="item.w"
-                           :h="item.h"
+                           :col-width="60"
+                           :x.sync="item.x"
+                           :y.sync="item.y"
+                           :w.sync="item.w"
+                           :h.sync="item.h"
                            :i="item.i"
                            :title="item.title">
-                    <span class="text">{{itemTitle(item)}}</span>
                 </grid-item>
             </grid-layout>
         </div>
