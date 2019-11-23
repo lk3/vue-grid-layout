@@ -141,10 +141,10 @@
                 required: false,
                 default: null
             },
-            useCssTransforms: {
+/*            useCssTransforms: {
              type: Boolean,
              required: true
-             },
+             },*/
             static: {
                 type: Boolean,
                 required: false,
@@ -222,7 +222,7 @@
                 maxRows: Infinity,
                 draggable: null,
                 resizable: null,
-                cssTransforms: this.useCssTransforms,
+                //cssTransforms: this.useCssTransforms,
                 allowFrom: this.dragAllowFrom,
 
                 isDragging: false,
