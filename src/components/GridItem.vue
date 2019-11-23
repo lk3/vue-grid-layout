@@ -442,6 +442,7 @@
                 }
                 this.lastRemovedId = id
                 this.$eventHub.$emit('event-widget-remove', id)
+                this.$destroy()
             },
             createStyle: function () {
                 if (this.x + this.w > this.cols) {
