@@ -451,7 +451,7 @@
                 //     return false
                 // }
                 // this.lastRemovedId = id
-                this.$eventBus.$emit('event-widget-kill-request', id)
+                this.eventBus.$emit('event-widget-kill-request', id)
                 // this.$destroy()
             },
             createStyle: function () {
@@ -875,6 +875,7 @@
                     this.$emit("resize", this.i, pos.h, pos.w, newSize.height, newSize.width);
                 }
                 if (this.previousW !== pos.w || this.previousH !== pos.h) {
+                    // watch here, this.$emit should be this.eventBus.$emit???
                     this.$emit("resized", this.i, pos.h, pos.w, newSize.height, newSize.width);
                     this.eventBus.$emit("resizeEvent", "resizeend", this.i, this.innerX, this.innerY, pos.h, pos.w);
                 }
