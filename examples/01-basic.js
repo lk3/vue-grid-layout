@@ -40,6 +40,12 @@ new Vue({
     mounted: function () {
         let self = this
         //this.index = this.layout.length;
+        this.$eventHub.$on("event-widget-kill-request", function(data) {
+          if (confirm('Are you sure you want to remove?') !== true) {
+            return false
+          }
+            self.$eventHub.$emit('event-widget-remove', data)
+        })
         this.$eventHub.$on("event-widget-remove", function(data) {
           console.log("removing", data)
           self.layout.splice(data, 1) // this works because we use grid item index as its ID
@@ -52,6 +58,9 @@ new Vue({
             //    waterfall('.grid')
             //})
         //})
+    },
+    beforeDestroy: function() {
+        console.log('Destroying', this.i)
     },
     methods: {
         itemTitle(item) {
