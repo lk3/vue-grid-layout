@@ -447,13 +447,12 @@
                 if (this.id !== id) {
                     return false
                 }
-                if (this.lastRemovedId === id) {
-                    return false
-                }
-                this.lastRemovedId = id
-                this.$eventHub.$emit('event-widget-kill-request', id)
-                this.$destroy()
+                // if (this.lastRemovedId === id) {
+                //     return false
+                // }
+                // this.lastRemovedId = id
                 this.$eventBus.$emit('event-widget-kill-request', id)
+                // this.$destroy()
             },
             createStyle: function () {
                 if (this.x + this.w > this.cols) {
