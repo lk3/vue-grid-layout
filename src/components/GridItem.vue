@@ -318,6 +318,12 @@
             this.interactObj.unset() // destroy interact intance
         },
         mounted: function () {
+            let self = this
+            this.eventBus.$on('event-widget-remove', function (uuid) {
+              if (uuid === self.i) {
+                self.$destroy()
+              }
+            })
             this.cols = this.$parent.colNum;
             this.rowHeight = this.$parent.rowHeight;
             this.containerWidth = this.$parent.width !== null ? this.$parent.width : 100;
@@ -447,6 +453,7 @@
                 this.lastRemovedId = id
                 this.$eventHub.$emit('event-widget-kill-request', id)
                 this.$destroy()
+                this.$eventBus.$emit('event-widget-kill-request', id)
             },
             createStyle: function () {
                 if (this.x + this.w > this.cols) {
