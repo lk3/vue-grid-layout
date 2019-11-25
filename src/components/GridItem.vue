@@ -444,9 +444,11 @@
         },
         methods: {
             requestRemove: function(id) {
+                // console.log('requesting remove', id)
                 if (this.id !== id) {
                     return false
                 }
+                // console.log('passed condition')
                 // if (this.lastRemovedId === id) {
                 //     return false
                 // }
