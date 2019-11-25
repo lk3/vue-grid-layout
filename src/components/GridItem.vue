@@ -6,7 +6,7 @@
          :style="style">
         <div class="vue-grid-item-title">
             <div style="float: right;">
-                <a href="#" @click="removeWidget(id)" class="vue-grid-item-remove">[x]</a>
+                <a href="#" @click="requestRemove(id)" class="vue-grid-item-remove">[x]</a>
             </div>
             {{widgetTitle}}
         </div>
@@ -437,7 +437,7 @@
             }
         },
         methods: {
-            removeWidget: function(id) {
+            requestRemove: function(id) {
                 if (this.id !== id) {
                     return false
                 }
