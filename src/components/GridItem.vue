@@ -445,7 +445,7 @@
                     return false
                 }
                 this.lastRemovedId = id
-                this.$eventHub.$emit('event-widget-remove', id)
+                this.$eventHub.$emit('event-widget-kill-request', id)
                 this.$destroy()
             },
             createStyle: function () {
