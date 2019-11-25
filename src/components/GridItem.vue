@@ -453,7 +453,10 @@
                 //     return false
                 // }
                 // this.lastRemovedId = id
-                this.eventBus.$emit('event-widget-kill-request', id)
+                if (this.$eventHub) {
+                    this.$eventHub.$emit('event-widget-kill-request', id)
+                    //this.eventBus.$emit('event-widget-kill-request', id)
+                }
                 // this.$destroy()
             },
             createStyle: function () {

@@ -170,6 +170,9 @@
             this.$emit('layout-before-mount', this.layout);
         },
         mounted: function() {
+            // this.$eventHub.$on("event-widget-kill-request", function(data) {
+            //     console.log('kill request', data)
+            // })
             this.$emit('layout-mounted', this.layout);
             this.$nextTick(function () {
                 validateLayout(this.layout);
