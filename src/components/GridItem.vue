@@ -315,15 +315,20 @@
             this.eventBus.$off('setMaxRows', self.setMaxRowsHandler);
             this.eventBus.$off('directionchange', self.directionchangeHandler);
             this.eventBus.$off('setColNum', self.setColNum);
+            // if (this.$eventHub) {
+            //     this.$eventHub.$off('event-grid-remove');
+            // }
             this.interactObj.unset() // destroy interact intance
         },
         mounted: function () {
             let self = this
-            this.eventBus.$on('event-widget-remove', function (uuid) {
-              if (uuid === self.i) {
-                self.$destroy()
-              }
-            })
+            // if (this.$eventHub) {
+            //     this.$eventHub.$on('event-grid-remove', function (uuid) {
+            //       if (uuid === self.i) {
+            //         self.$destroy()
+            //       }
+            //     })
+            // }
             this.cols = this.$parent.colNum;
             this.rowHeight = this.$parent.rowHeight;
             this.containerWidth = this.$parent.width !== null ? this.$parent.width : 100;
