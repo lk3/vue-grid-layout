@@ -7,7 +7,8 @@
                    :y="placeholder.y"
                    :w="placeholder.w"
                    :h="placeholder.h"
-                   :i="placeholder.i"></grid-item>
+                   :i="placeholder.i"
+                   :title="placeholder.title"></grid-item>
     </div>
 </template>
 <style>
@@ -22,7 +23,7 @@
 
     import {bottom, compact, getLayoutItem, moveElement, validateLayout} from '../helpers/utils';
     //var eventBus = require('./eventBus');
-    
+
     import GridItem from './GridItem.vue'
     import {addWindowEventListener, removeWindowEventListener} from "../helpers/DOM";
 

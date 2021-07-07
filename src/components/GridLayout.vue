@@ -7,7 +7,8 @@
                    :y="placeholder.y"
                    :w="placeholder.w"
                    :h="placeholder.h"
-                   :i="placeholder.i"></grid-item>
+                   :i="placeholder.i"
+                   :title="placeholder.title"></grid-item>
     </div>
 </template>
 <style>
@@ -47,6 +48,24 @@
                 type: Number,
                 default: 12
             },
+            // Added
+/*            colWidth: { // if this is set, will try to keep columns at this size
+                type: Number,
+                required: false,
+                default: null
+            },
+            // Added
+            minCols: {
+                type: Number,
+                required: false,
+                default: 12
+            },
+            // Added
+            maxCols: {
+                type: Number,
+                required: false,
+                default: 20
+            },*/
             rowHeight: {
                 type: Number,
                 default: 150
@@ -104,6 +123,7 @@
         },
         data: function () {
             return {
+                usedCols: (this.colNum ? this.colNum : 0),
                 width: null,
                 mergedStyle: {},
                 lastLayoutLength: 0,
@@ -150,6 +170,9 @@
             this.$emit('layout-before-mount', this.layout);
         },
         mounted: function() {
+            // this.$eventHub.$on("event-widget-kill-request", function(data) {
+            //     console.log('kill request', data)
+            // })
             this.$emit('layout-mounted', this.layout);
             this.$nextTick(function () {
                 validateLayout(this.layout);
@@ -167,6 +190,10 @@
                     compact(self.layout, self.verticalCompact);
 
                     self.updateHeight();
+
+                    // Added
+                    //self.computeCols();
+
                     self.$nextTick(function () {
                         this.erd = elementResizeDetectorMaker({
                             strategy: "scroll", //<- For ultra performance.
@@ -218,6 +245,8 @@
                 this.layoutUpdate();
             },
             colNum: function (val) {
+                // Added
+                //val = (this.colWidth ? this.usedCols : val);
                 this.eventBus.$emit("setColNum", val);
             },
             rowHeight: function() {
@@ -232,6 +261,8 @@
             responsive() {
                 if (!this.responsive) {
                     this.$emit('update:layout', this.originalLayout);
+                    // Added
+                    //let val = (this.colWidth ? this.usedCols : this.colNum);
                     this.eventBus.$emit("setColNum", this.colNum);
                 }
                 this.onWindowResize();
@@ -277,7 +308,10 @@
             onWindowResize: function () {
                 if (this.$refs !== null && this.$refs.item !== null && this.$refs.item !== undefined) {
                     this.width = this.$refs.item.offsetWidth;
+                    //console.log('this.width', this.width)
                 }
+                // Added
+                //this.computeCols();
                 this.eventBus.$emit("resizeEvent");
             },
             containerHeight: function () {
@@ -377,6 +411,15 @@
                 this.updateHeight();
 
                 if (eventName === 'resizeend') this.$emit('layout-updated', this.layout);
+            },
+
+            // Added: compute number of cols to keep them same width
+            computeCols() {
+                let c = Math.floor((window.innerWidth - this.margin[0]) / (this.colWidth + this.margin[0]))
+                c = (c > this.maxCols ? this.maxCols : c);
+                c = (c < this.minCols ? this.minCols : c);
+                this.usedCols = c;
+                this.eventBus.$emit("setColNum", this.usedCols);
             },
 
             // finds or generates new layouts for set breakpoints

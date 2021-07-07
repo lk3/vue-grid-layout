@@ -58,6 +58,7 @@
                            :w="item.w"
                            :h="item.h"
                            :i="item.i"
+                           :title="item.title"
                            @resize="resize"
                            @move="move"
                            @resized="resized"

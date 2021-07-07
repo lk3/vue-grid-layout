@@ -851,6 +851,21 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "23d4":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("2350")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".vue-grid-layout{position:relative;-webkit-transition:height .2s ease;transition:height .2s ease}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "2621":
 /***/ (function(module, exports) {
 
@@ -2990,6 +3005,17 @@ module.exports = function (IS_INCLUDES) {
 
 /***/ }),
 
+/***/ "c379":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResponsiveGridLayout_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("e0c0");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResponsiveGridLayout_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResponsiveGridLayout_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_index_js_ref_6_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ResponsiveGridLayout_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
 /***/ "c5f6":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3933,6 +3959,21 @@ exports.f = __webpack_require__("8e60") ? Object.defineProperty : function defin
 
 /***/ }),
 
+/***/ "e0c0":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("23d4");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("6b7b5541", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "e11e":
 /***/ (function(module, exports) {
 
@@ -4434,12 +4475,12 @@ var web_dom_iterable = __webpack_require__("ac6a");
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 var external_commonjs_vue_commonjs2_vue_root_Vue_default = /*#__PURE__*/__webpack_require__.n(external_commonjs_vue_commonjs2_vue_root_Vue_);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0156aa68-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridItem.vue?vue&type=template&id=e827a502&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-item",class:_vm.classObj,style:(_vm.style)},[_vm._t("default"),(_vm.resizableAndNotStatic)?_c('span',{ref:"handle",class:_vm.resizableHandleClass}):_vm._e()],2)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1659a6dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridItem.vue?vue&type=template&id=12f7448e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-item",class:_vm.classObj,style:(_vm.style),attrs:{"id":_vm.id}},[_c('div',{staticClass:"vue-grid-item-title"},[_c('div',{staticStyle:{"float":"right"}},[_c('a',{staticClass:"vue-grid-item-remove",attrs:{"href":"#"},on:{"click":function($event){return _vm.requestRemove(_vm.id)}}},[_vm._v("[x]")])]),_vm._v("\n        "+_vm._s(_vm.widgetTitle)+"\n    ")]),_c('div',{staticClass:"vue-grid-item-content"},[_vm._t("default")],2),(_vm.resizableAndNotStatic)?_c('span',{ref:"handle",class:_vm.resizableHandleClass}):_vm._e()])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/GridItem.vue?vue&type=template&id=e827a502&
+// CONCATENATED MODULE: ./src/components/GridItem.vue?vue&type=template&id=12f7448e&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.regexp.match.js
 var es6_regexp_match = __webpack_require__("4917");
@@ -4454,7 +4495,6 @@ var es6_regexp_replace = __webpack_require__("a481");
 var es6_array_sort = __webpack_require__("55dd");
 
 // CONCATENATED MODULE: ./src/helpers/utils.js
-
 
 
 
@@ -5366,6 +5406,14 @@ function removeWindowEventListener(event
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
  //    var eventBus = require('./eventBus');
@@ -5396,6 +5444,12 @@ var interact = __webpack_require__("fb3a");
      type: Number,
      required: true
      },*/
+    // Added
+    colWidth: {
+      type: Number,
+      required: false,
+      default: null
+    },
     isDraggable: {
       type: Boolean,
       required: false,
@@ -5407,11 +5461,10 @@ var interact = __webpack_require__("fb3a");
       default: null
     },
 
-    /*useCssTransforms: {
-     type: Boolean,
-     required: true
-     },
-     */
+    /*            useCssTransforms: {
+                 type: Boolean,
+                 required: true
+                 },*/
     static: {
       type: Boolean,
       required: false,
@@ -5456,6 +5509,9 @@ var interact = __webpack_require__("fb3a");
     i: {
       required: true
     },
+    title: {
+      required: true
+    },
     dragIgnoreFrom: {
       type: String,
       required: false,
@@ -5464,7 +5520,7 @@ var interact = __webpack_require__("fb3a");
     dragAllowFrom: {
       type: String,
       required: false,
-      default: null
+      default: '.vue-grid-item-title'
     },
     resizeIgnoreFrom: {
       type: String,
@@ -5475,6 +5531,10 @@ var interact = __webpack_require__("fb3a");
   inject: ["eventBus"],
   data: function data() {
     return {
+      id: this.i,
+      //id: Math.random().toString(36).substring(2, 15) +
+      //Math.random().toString(36).substring(2, 15),
+      widgetTitle: this.title,
       cols: 1,
       containerWidth: 100,
       rowHeight: 30,
@@ -5482,7 +5542,8 @@ var interact = __webpack_require__("fb3a");
       maxRows: Infinity,
       draggable: null,
       resizable: null,
-      useCssTransforms: true,
+      //cssTransforms: this.useCssTransforms,
+      allowFrom: this.dragAllowFrom,
       isDragging: false,
       dragging: null,
       isResizing: false,
@@ -5502,7 +5563,8 @@ var interact = __webpack_require__("fb3a");
       innerX: this.x,
       innerY: this.y,
       innerW: this.w,
-      innerH: this.h
+      innerH: this.h,
+      lastRemovedId: null
     };
   },
   created: function created() {
@@ -5555,7 +5617,8 @@ var interact = __webpack_require__("fb3a");
     this.eventBus.$on('setRowHeight', self.setRowHeightHandler);
     this.eventBus.$on('setMaxRows', self.setMaxRowsHandler);
     this.eventBus.$on('directionchange', self.directionchangeHandler);
-    this.eventBus.$on('setColNum', self.setColNum);
+    this.eventBus.$on('setColNum', self.setColNum); // this.eventBus.$on('killComponent', self.requestRemove)
+
     this.rtl = getDocumentDir() === 'rtl';
   },
   beforeDestroy: function beforeDestroy() {
@@ -5568,10 +5631,21 @@ var interact = __webpack_require__("fb3a");
     this.eventBus.$off('setRowHeight', self.setRowHeightHandler);
     this.eventBus.$off('setMaxRows', self.setMaxRowsHandler);
     this.eventBus.$off('directionchange', self.directionchangeHandler);
-    this.eventBus.$off('setColNum', self.setColNum);
+    this.eventBus.$off('setColNum', self.setColNum); // if (this.$eventHub) {
+    //     this.$eventHub.$off('event-grid-remove');
+    // }
+
     this.interactObj.unset(); // destroy interact intance
   },
   mounted: function mounted() {
+    var self = this; // if (this.$eventHub) {
+    //     this.$eventHub.$on('event-grid-remove', function (uuid) {
+    //       if (uuid === self.i) {
+    //         self.$destroy()
+    //       }
+    //     })
+    // }
+
     this.cols = this.$parent.colNum;
     this.rowHeight = this.$parent.rowHeight;
     this.containerWidth = this.$parent.width !== null ? this.$parent.width : 100;
@@ -5590,7 +5664,7 @@ var interact = __webpack_require__("fb3a");
       this.resizable = this.isResizable;
     }
 
-    this.useCssTransforms = this.$parent.useCssTransforms;
+    this.cssTransforms = this.$parent.cssTransforms;
     this.createStyle();
   },
   watch: {
@@ -5665,7 +5739,7 @@ var interact = __webpack_require__("fb3a");
         'static': this.static,
         'resizing': this.isResizing,
         'vue-draggable-dragging': this.isDragging,
-        'cssTransforms': this.useCssTransforms,
+        'cssTransforms': this.cssTransforms,
         'render-rtl': this.renderRtl,
         'disable-userselect': this.isDragging,
         'no-touch': this.isAndroid && this.draggableOrResizableAndNotStatic
@@ -5692,6 +5766,22 @@ var interact = __webpack_require__("fb3a");
     }
   },
   methods: {
+    requestRemove: function requestRemove(id) {
+      // console.log('requesting remove', id)
+      if (this.id !== id) {
+        return false;
+      } // console.log('passed condition')
+      // if (this.lastRemovedId === id) {
+      //     return false
+      // }
+      // this.lastRemovedId = id
+
+
+      if (this.$eventHub) {
+        this.$eventHub.$emit('event-widget-kill-request', id); //this.eventBus.$emit('event-widget-kill-request', id)
+      } // this.$destroy()
+
+    },
     createStyle: function createStyle() {
       if (this.x + this.w > this.cols) {
         this.innerX = 0;
@@ -5704,9 +5794,10 @@ var interact = __webpack_require__("fb3a");
       var pos = this.calcPosition(this.innerX, this.innerY, this.innerW, this.innerH);
 
       if (this.isDragging) {
-        pos.top = this.dragging.top; //                    Add rtl support
+        pos.top = this.dragging.top;
 
         if (this.renderRtl) {
+          //                    Add rtl support
           pos.right = this.dragging.left;
         } else {
           pos.left = this.dragging.left;
@@ -5720,17 +5811,17 @@ var interact = __webpack_require__("fb3a");
 
       var style; // CSS Transforms support (default)
 
-      if (this.useCssTransforms) {
-        //                    Add rtl support
+      if (this.cssTransforms) {
         if (this.renderRtl) {
+          //                    Add rtl support
           style = setTransformRtl(pos.top, pos.right, pos.width, pos.height);
         } else {
           style = setTransform(pos.top, pos.left, pos.width, pos.height);
         }
       } else {
         // top,left (slow)
-        //                    Add rtl support
         if (this.renderRtl) {
+          //                    Add rtl support
           style = setTopRight(pos.top, pos.right, pos.width, pos.height);
         } else {
           style = setTopLeft(pos.top, pos.left, pos.width, pos.height);
@@ -6007,9 +6098,13 @@ var interact = __webpack_require__("fb3a");
         y: y
       };
     },
+    // Added: compute col as fixed value
     // Helper for generating column width
     calcColWidth: function calcColWidth() {
-      var colWidth = (this.containerWidth - this.margin[0] * (this.cols + 1)) / this.cols; // console.log("### COLS=" + this.cols + " COL WIDTH=" + colWidth + " MARGIN " + this.margin[0]);
+      //if (this.colWidth) {
+      //    return this.coldWidth;
+      //}
+      var colWidth = (this.containerWidth - this.margin[0] * (this.cols + 1)) / this.cols; //console.log("### COLS=" + this.cols + " COL WIDTH=" + this.colWidth + " MARGIN " + this.margin[0]);
 
       return colWidth;
     },
@@ -6055,7 +6150,7 @@ var interact = __webpack_require__("fb3a");
       if (this.draggable && !this.static) {
         var opts = {
           ignoreFrom: this.dragIgnoreFrom,
-          allowFrom: this.dragAllowFrom
+          allowFrom: this.allowFrom
         };
         this.interactObj.draggable(opts);
         /*this.interactObj.draggable({allowFrom: '.vue-draggable-handle'});*/
@@ -6157,6 +6252,7 @@ var interact = __webpack_require__("fb3a");
       }
 
       if (this.previousW !== pos.w || this.previousH !== pos.h) {
+        // watch here, this.$emit should be this.eventBus.$emit???
         this.$emit("resized", this.i, pos.h, pos.w, newSize.height, newSize.width);
         this.eventBus.$emit("resizeEvent", "resizeend", this.i, this.innerX, this.innerY, pos.h, pos.w);
       }
@@ -6284,12 +6380,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var GridItem = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0156aa68-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridLayout.vue?vue&type=template&id=bff27f1c&
-var GridLayoutvue_type_template_id_bff27f1c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-layout",style:(_vm.mergedStyle)},[_vm._t("default"),_c('grid-item',{directives:[{name:"show",rawName:"v-show",value:(_vm.isDragging),expression:"isDragging"}],staticClass:"vue-grid-placeholder",attrs:{"x":_vm.placeholder.x,"y":_vm.placeholder.y,"w":_vm.placeholder.w,"h":_vm.placeholder.h,"i":_vm.placeholder.i}})],2)}
-var GridLayoutvue_type_template_id_bff27f1c_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1659a6dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/GridLayout.vue?vue&type=template&id=795fc146&
+var GridLayoutvue_type_template_id_795fc146_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-layout",style:(_vm.mergedStyle)},[_vm._t("default"),_c('grid-item',{directives:[{name:"show",rawName:"v-show",value:(_vm.isDragging),expression:"isDragging"}],staticClass:"vue-grid-placeholder",attrs:{"x":_vm.placeholder.x,"y":_vm.placeholder.y,"w":_vm.placeholder.w,"h":_vm.placeholder.h,"i":_vm.placeholder.i,"title":_vm.placeholder.title}})],2)}
+var GridLayoutvue_type_template_id_795fc146_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/GridLayout.vue?vue&type=template&id=bff27f1c&
+// CONCATENATED MODULE: ./src/components/GridLayout.vue?vue&type=template&id=795fc146&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.object.get-own-property-descriptors.js
 var es7_object_get_own_property_descriptors = __webpack_require__("8e6e");
@@ -6318,7 +6414,6 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 // CONCATENATED MODULE: ./src/helpers/responsiveUtils.js
-
 
 
 
@@ -6520,6 +6615,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 //
 //
 //
+//
 
 
 var elementResizeDetectorMaker = __webpack_require__("eec4");
@@ -6549,6 +6645,25 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
       type: Number,
       default: 12
     },
+    // Added
+
+    /*            colWidth: { // if this is set, will try to keep columns at this size
+                    type: Number,
+                    required: false,
+                    default: null
+                },
+                // Added
+                minCols: {
+                    type: Number,
+                    required: false,
+                    default: 12
+                },
+                // Added
+                maxCols: {
+                    type: Number,
+                    required: false,
+                    default: 20
+                },*/
     rowHeight: {
       type: Number,
       default: 150
@@ -6622,6 +6737,7 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
   },
   data: function data() {
     return {
+      usedCols: this.colNum ? this.colNum : 0,
       width: null,
       mergedStyle: {},
       lastLayoutLength: 0,
@@ -6670,6 +6786,9 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
     this.$emit('layout-before-mount', this.layout);
   },
   mounted: function mounted() {
+    // this.$eventHub.$on("event-widget-kill-request", function(data) {
+    //     console.log('kill request', data)
+    // })
     this.$emit('layout-mounted', this.layout);
     this.$nextTick(function () {
       validateLayout(this.layout);
@@ -6681,7 +6800,9 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
 
         addWindowEventListener('resize', self.onWindowResize);
         compact(self.layout, self.verticalCompact);
-        self.updateHeight();
+        self.updateHeight(); // Added
+        //self.computeCols();
+
         self.$nextTick(function () {
           this.erd = elementResizeDetectorMaker({
             strategy: "scroll",
@@ -6736,6 +6857,8 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
       this.layoutUpdate();
     },
     colNum: function colNum(val) {
+      // Added
+      //val = (this.colWidth ? this.usedCols : val);
       this.eventBus.$emit("setColNum", val);
     },
     rowHeight: function rowHeight() {
@@ -6749,7 +6872,9 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
     },
     responsive: function responsive() {
       if (!this.responsive) {
-        this.$emit('update:layout', this.originalLayout);
+        this.$emit('update:layout', this.originalLayout); // Added
+        //let val = (this.colWidth ? this.usedCols : this.colNum);
+
         this.eventBus.$emit("setColNum", this.colNum);
       }
 
@@ -6795,8 +6920,10 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
     },
     onWindowResize: function onWindowResize() {
       if (this.$refs !== null && this.$refs.item !== null && this.$refs.item !== undefined) {
-        this.width = this.$refs.item.offsetWidth;
-      }
+        this.width = this.$refs.item.offsetWidth; //console.log('this.width', this.width)
+      } // Added
+      //this.computeCols();
+
 
       this.eventBus.$emit("resizeEvent");
     },
@@ -6903,6 +7030,14 @@ var elementResizeDetectorMaker = __webpack_require__("eec4");
       this.updateHeight();
       if (eventName === 'resizeend') this.$emit('layout-updated', this.layout);
     },
+    // Added: compute number of cols to keep them same width
+    computeCols: function computeCols() {
+      var c = Math.floor((window.innerWidth - this.margin[0]) / (this.colWidth + this.margin[0]));
+      c = c > this.maxCols ? this.maxCols : c;
+      c = c < this.minCols ? this.minCols : c;
+      this.usedCols = c;
+      this.eventBus.$emit("setColNum", this.usedCols);
+    },
     // finds or generates new layouts for set breakpoints
     responsiveGridLayout: function responsiveGridLayout() {
       var newBreakpoint = getBreakpointFromWidth(this.breakpoints, this.width);
@@ -6958,8 +7093,8 @@ var GridLayoutvue_type_style_index_0_lang_css_ = __webpack_require__("e279");
 
 var GridLayout_component = normalizeComponent(
   components_GridLayoutvue_type_script_lang_js_,
-  GridLayoutvue_type_template_id_bff27f1c_render,
-  GridLayoutvue_type_template_id_bff27f1c_staticRenderFns,
+  GridLayoutvue_type_template_id_795fc146_render,
+  GridLayoutvue_type_template_id_795fc146_staticRenderFns,
   false,
   null,
   null,
@@ -6968,6 +7103,336 @@ var GridLayout_component = normalizeComponent(
 )
 
 /* harmony default export */ var GridLayout = (GridLayout_component.exports);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1659a6dc-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ResponsiveGridLayout.vue?vue&type=template&id=fd6c0ba6&
+var ResponsiveGridLayoutvue_type_template_id_fd6c0ba6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"item",staticClass:"vue-grid-layout",style:(_vm.mergedStyle)},[_vm._t("default"),_c('grid-item',{directives:[{name:"show",rawName:"v-show",value:(_vm.isDragging),expression:"isDragging"}],staticClass:"vue-grid-placeholder",attrs:{"x":_vm.placeholder.x,"y":_vm.placeholder.y,"w":_vm.placeholder.w,"h":_vm.placeholder.h,"i":_vm.placeholder.i,"title":_vm.placeholder.title}})],2)}
+var ResponsiveGridLayoutvue_type_template_id_fd6c0ba6_staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/components/ResponsiveGridLayout.vue?vue&type=template&id=fd6c0ba6&
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/ResponsiveGridLayout.vue?vue&type=script&lang=js&
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+var ResponsiveGridLayoutvue_type_script_lang_js_elementResizeDetectorMaker = __webpack_require__("eec4");
+
+ //var eventBus = require('./eventBus');
+
+
+
+/* harmony default export */ var ResponsiveGridLayoutvue_type_script_lang_js_ = ({
+  name: "GridLayout",
+  provide: function provide() {
+    return {
+      eventBus: null
+    };
+  },
+  components: {
+    GridItem: GridItem
+  },
+  props: {
+    // If true, the container height swells and contracts to fit contents
+    autoSize: {
+      type: Boolean,
+      default: true
+    },
+    colNum: {
+      type: Number,
+      default: 12
+    },
+    rowHeight: {
+      type: Number,
+      default: 150
+    },
+    maxRows: {
+      type: Number,
+      default: Infinity
+    },
+    margin: {
+      type: Array,
+      default: function _default() {
+        return [10, 10];
+      }
+    },
+    isDraggable: {
+      type: Boolean,
+      default: true
+    },
+    isResizable: {
+      type: Boolean,
+      default: true
+    },
+    isMirrored: {
+      type: Boolean,
+      default: false
+    },
+    useCssTransforms: {
+      type: Boolean,
+      default: true
+    },
+    verticalCompact: {
+      type: Boolean,
+      default: true
+    },
+    layout: {
+      type: Array,
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      width: null,
+      mergedStyle: {},
+      lastLayoutLength: 0,
+      isDragging: false,
+      placeholder: {
+        x: 0,
+        y: 0,
+        w: 0,
+        h: 0,
+        i: -1
+      }
+    };
+  },
+  created: function created() {
+    var self = this; // Accessible refernces of functions for removing in beforeDestroy
+
+    self.resizeEventHandler = function (eventType, i, x, y, h, w) {
+      self.resizeEvent(eventType, i, x, y, h, w);
+    };
+
+    self.dragEventHandler = function (eventType, i, x, y, h, w) {
+      self.dragEvent(eventType, i, x, y, h, w);
+    };
+
+    self._provided.eventBus = new external_commonjs_vue_commonjs2_vue_root_Vue_default.a();
+    self.eventBus = self._provided.eventBus;
+    self.eventBus.$on('resizeEvent', self.resizeEventHandler);
+    self.eventBus.$on('dragEvent', self.dragEventHandler);
+  },
+  beforeDestroy: function beforeDestroy() {
+    //Remove listeners
+    this.eventBus.$off('resizeEvent', this.resizeEventHandler);
+    this.eventBus.$off('dragEvent', this.dragEventHandler);
+    removeWindowEventListener("resize", this.onWindowResize);
+  },
+  mounted: function mounted() {
+    this.$nextTick(function () {
+      validateLayout(this.layout);
+      var self = this;
+      this.$nextTick(function () {
+        if (self.width === null) {
+          self.onWindowResize(); //self.width = self.$el.offsetWidth;
+
+          addWindowEventListener('resize', self.onWindowResize);
+        }
+
+        compact(self.layout, self.verticalCompact);
+        self.updateHeight();
+        self.$nextTick(function () {
+          var erd = ResponsiveGridLayoutvue_type_script_lang_js_elementResizeDetectorMaker({
+            strategy: "scroll" //<- For ultra performance.
+
+          });
+          erd.listenTo(self.$refs.item, function () {
+            self.onWindowResize();
+          });
+        });
+      });
+      addWindowEventListener("load", self.onWindowLoad.bind(this));
+    });
+  },
+  watch: {
+    width: function width() {
+      this.$nextTick(function () {
+        //this.$broadcast("updateWidth", this.width);
+        this.eventBus.$emit("updateWidth", this.width);
+        this.updateHeight();
+      });
+    },
+    layout: function layout() {
+      this.layoutUpdate();
+    },
+    colNum: function colNum(val) {
+      this.eventBus.$emit("setColNum", val);
+    },
+    rowHeight: function rowHeight() {
+      this.eventBus.$emit("setRowHeight", this.rowHeight);
+    },
+    isDraggable: function isDraggable() {
+      this.eventBus.$emit("setDraggable", this.isDraggable);
+    },
+    isResizable: function isResizable() {
+      this.eventBus.$emit("setResizable", this.isResizable);
+    }
+  },
+  methods: {
+    onWindowLoad: function onWindowLoad() {
+      var self = this;
+
+      if (self.width === null) {
+        self.onWindowResize(); //self.width = self.$el.offsetWidth;
+
+        addWindowEventListener('resize', self.onWindowResize);
+      }
+
+      compact(self.layout, self.verticalCompact);
+      self.updateHeight();
+      self.$nextTick(function () {
+        var erd = ResponsiveGridLayoutvue_type_script_lang_js_elementResizeDetectorMaker({
+          strategy: "scroll" //<- For ultra performance.
+
+        });
+        erd.listenTo(self.$refs.item, function () {
+          self.onWindowResize();
+        });
+      });
+    },
+    layoutUpdate: function layoutUpdate() {
+      if (this.layout !== undefined) {
+        if (this.layout.length !== this.lastLayoutLength) {
+          //console.log("### LAYOUT UPDATE!");
+          this.lastLayoutLength = this.layout.length;
+        }
+
+        compact(this.layout, this.verticalCompact);
+        this.eventBus.$emit("updateWidth", this.width);
+        this.updateHeight();
+      }
+    },
+    updateHeight: function updateHeight() {
+      this.mergedStyle = {
+        height: this.containerHeight()
+      };
+    },
+    onWindowResize: function onWindowResize() {
+      if (this.$refs !== null && this.$refs.item !== null && this.$refs.item !== undefined) {
+        this.width = this.$refs.item.offsetWidth;
+      }
+    },
+    containerHeight: function containerHeight() {
+      if (!this.autoSize) return;
+      return bottom(this.layout) * (this.rowHeight + this.margin[1]) + this.margin[1] + 'px';
+    },
+    dragEvent: function dragEvent(eventName, id, x, y, h, w) {
+      if (eventName === "dragmove" || eventName === "dragstart") {
+        this.placeholder.i = id;
+        this.placeholder.x = x;
+        this.placeholder.y = y;
+        this.placeholder.w = w;
+        this.placeholder.h = h;
+        this.$nextTick(function () {
+          this.isDragging = true;
+        }); //this.$broadcast("updateWidth", this.width);
+
+        this.eventBus.$emit("updateWidth", this.width);
+      } else {
+        this.$nextTick(function () {
+          this.isDragging = false;
+        });
+      } //console.log(eventName + " id=" + id + ", x=" + x + ", y=" + y);
+
+
+      var l = getLayoutItem(this.layout, id); //GetLayoutItem sometimes returns null object
+
+      if (l === undefined || l === null) {
+        l = {
+          x: 0,
+          y: 0
+        };
+      }
+
+      l.x = x;
+      l.y = y; // Move the element to the dragged location.
+
+      this.layout = moveElement(this.layout, l, x, y, true);
+      compact(this.layout, this.verticalCompact); // needed because vue can't detect changes on array element properties
+
+      this.eventBus.$emit("compact");
+      this.updateHeight();
+      if (eventName === 'dragend') this.$emit('layout-updated', this.layout);
+    },
+    resizeEvent: function resizeEvent(eventName, id, x, y, h, w) {
+      if (eventName === "resizestart" || eventName === "resizemove") {
+        this.placeholder.i = id;
+        this.placeholder.x = x;
+        this.placeholder.y = y;
+        this.placeholder.w = w;
+        this.placeholder.h = h;
+        this.$nextTick(function () {
+          this.isDragging = true;
+        }); //this.$broadcast("updateWidth", this.width);
+
+        this.eventBus.$emit("updateWidth", this.width);
+      } else {
+        this.$nextTick(function () {
+          this.isDragging = false;
+        });
+      }
+
+      var l = getLayoutItem(this.layout, id); //GetLayoutItem sometimes return null object
+
+      if (l === undefined || l === null) {
+        l = {
+          h: 0,
+          w: 0
+        };
+      }
+
+      l.h = h;
+      l.w = w;
+      compact(this.layout, this.verticalCompact);
+      this.eventBus.$emit("compact");
+      this.updateHeight();
+      if (eventName === 'resizeend') this.$emit('layout-updated', this.layout);
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/ResponsiveGridLayout.vue?vue&type=script&lang=js&
+ /* harmony default export */ var components_ResponsiveGridLayoutvue_type_script_lang_js_ = (ResponsiveGridLayoutvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./src/components/ResponsiveGridLayout.vue?vue&type=style&index=0&lang=css&
+var ResponsiveGridLayoutvue_type_style_index_0_lang_css_ = __webpack_require__("c379");
+
+// CONCATENATED MODULE: ./src/components/ResponsiveGridLayout.vue
+
+
+
+
+
+
+/* normalize component */
+
+var ResponsiveGridLayout_component = normalizeComponent(
+  components_ResponsiveGridLayoutvue_type_script_lang_js_,
+  ResponsiveGridLayoutvue_type_template_id_fd6c0ba6_render,
+  ResponsiveGridLayoutvue_type_template_id_fd6c0ba6_staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* harmony default export */ var ResponsiveGridLayout = (ResponsiveGridLayout_component.exports);
 // CONCATENATED MODULE: ./src/components/index.js
 
 
@@ -6975,10 +7440,10 @@ var GridLayout_component = normalizeComponent(
 
 
 
- // import ResponsiveGridLayout from './ResponsiveGridLayout.vue';
+
 
 var VueGridLayout = {
-  // ResponsiveGridLayout,
+  ResponsiveGridLayout: ResponsiveGridLayout,
   GridLayout: GridLayout,
   GridItem: GridItem
 }; // module.exports = VueGridLayout;
@@ -6989,6 +7454,7 @@ Object.keys(VueGridLayout).forEach(function (name) {
 /* harmony default export */ var components = (VueGridLayout);
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+/* concated harmony reexport ResponsiveGridLayout */__webpack_require__.d(__webpack_exports__, "ResponsiveGridLayout", function() { return ResponsiveGridLayout; });
 /* concated harmony reexport GridLayout */__webpack_require__.d(__webpack_exports__, "GridLayout", function() { return GridLayout; });
 /* concated harmony reexport GridItem */__webpack_require__.d(__webpack_exports__, "GridItem", function() { return GridItem; });
 

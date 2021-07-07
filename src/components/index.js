@@ -1,11 +1,11 @@
 import Vue from "vue";
 import GridItem from './GridItem.vue';
 import GridLayout from './GridLayout.vue';
-// import ResponsiveGridLayout from './ResponsiveGridLayout.vue';
+import ResponsiveGridLayout from './ResponsiveGridLayout.vue';
 
 
 const VueGridLayout = {
-    // ResponsiveGridLayout,
+    ResponsiveGridLayout,
     GridLayout,
     GridItem
 }
@@ -17,4 +17,4 @@ Object.keys(VueGridLayout).forEach(name => {
 });
 
 export default VueGridLayout;
-export { GridLayout, GridItem };
+export { ResponsiveGridLayout, GridLayout, GridItem };

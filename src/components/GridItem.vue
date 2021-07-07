@@ -1,10 +1,18 @@
 <template>
     <div ref="item"
+         :id="id"
          class="vue-grid-item"
          :class="classObj"
-         :style="style"
-    >
-        <slot></slot>
+         :style="style">
+        <div class="vue-grid-item-title">
+            <div style="float: right;">
+                <a href="#" @click="requestRemove(id)" class="vue-grid-item-remove">[x]</a>
+            </div>
+            {{widgetTitle}}
+        </div>
+        <div class="vue-grid-item-content">
+            <slot></slot>
+        </div>
         <span v-if="resizableAndNotStatic" ref="handle" :class="resizableHandleClass"></span>
         <!--<span v-if="draggable" ref="dragHandle" class="vue-draggable-handle"></span>-->
     </div>
@@ -117,6 +125,12 @@
              type: Number,
              required: true
              },*/
+             // Added
+             colWidth: {
+                type: Number,
+                required: false,
+                default: null
+             },
             isDraggable: {
                 type: Boolean,
                 required: false,
@@ -127,11 +141,10 @@
                 required: false,
                 default: null
             },
-            /*useCssTransforms: {
+/*            useCssTransforms: {
              type: Boolean,
              required: true
-             },
-             */
+             },*/
             static: {
                 type: Boolean,
                 required: false,
@@ -176,6 +189,9 @@
             i: {
                 required: true
             },
+            title: {
+                required: true
+            },
             dragIgnoreFrom: {
                 type: String,
                 required: false,
@@ -184,7 +200,7 @@
             dragAllowFrom: {
                 type: String,
                 required: false,
-                default: null
+                default: '.vue-grid-item-title'
             },
             resizeIgnoreFrom: {
                 type: String,
@@ -195,6 +211,10 @@
         inject: ["eventBus"],
         data: function () {
             return {
+                id: this.i,
+                //id: Math.random().toString(36).substring(2, 15) +
+                //Math.random().toString(36).substring(2, 15),
+                widgetTitle: this.title,
                 cols: 1,
                 containerWidth: 100,
                 rowHeight: 30,
@@ -202,7 +222,8 @@
                 maxRows: Infinity,
                 draggable: null,
                 resizable: null,
-                useCssTransforms: true,
+                //cssTransforms: this.useCssTransforms,
+                allowFrom: this.dragAllowFrom,
 
                 isDragging: false,
                 dragging: null,
@@ -225,7 +246,9 @@
                 innerX: this.x,
                 innerY: this.y,
                 innerW: this.w,
-                innerH: this.h
+                innerH: this.h,
+                lastRemovedId: null
+
             }
         },
         created () {
@@ -277,6 +300,7 @@
             this.eventBus.$on('setMaxRows', self.setMaxRowsHandler);
             this.eventBus.$on('directionchange', self.directionchangeHandler);
             this.eventBus.$on('setColNum', self.setColNum)
+            // this.eventBus.$on('killComponent', self.requestRemove)
 
             this.rtl = getDocumentDir() === 'rtl';
         },
@@ -291,9 +315,20 @@
             this.eventBus.$off('setMaxRows', self.setMaxRowsHandler);
             this.eventBus.$off('directionchange', self.directionchangeHandler);
             this.eventBus.$off('setColNum', self.setColNum);
+            // if (this.$eventHub) {
+            //     this.$eventHub.$off('event-grid-remove');
+            // }
             this.interactObj.unset() // destroy interact intance
         },
         mounted: function () {
+            let self = this
+            // if (this.$eventHub) {
+            //     this.$eventHub.$on('event-grid-remove', function (uuid) {
+            //       if (uuid === self.i) {
+            //         self.$destroy()
+            //       }
+            //     })
+            // }
             this.cols = this.$parent.colNum;
             this.rowHeight = this.$parent.rowHeight;
             this.containerWidth = this.$parent.width !== null ? this.$parent.width : 100;
@@ -309,7 +344,7 @@
             } else {
                 this.resizable = this.isResizable;
             }
-            this.useCssTransforms = this.$parent.useCssTransforms;
+            this.cssTransforms = this.$parent.cssTransforms;
             this.createStyle();
         },
         watch: {
@@ -386,7 +421,7 @@
                     'static': this.static,
                     'resizing' : this.isResizing,
                     'vue-draggable-dragging' : this.isDragging,
-                    'cssTransforms' : this.useCssTransforms,
+                    'cssTransforms' : this.cssTransforms,
                     'render-rtl' : this.renderRtl,
                     'disable-userselect': this.isDragging,
                     'no-touch': this.isAndroid && this.draggableOrResizableAndNotStatic
@@ -413,6 +448,22 @@
             }
         },
         methods: {
+            requestRemove: function(id) {
+                // console.log('requesting remove', id)
+                if (this.id !== id) {
+                    return false
+                }
+                // console.log('passed condition')
+                // if (this.lastRemovedId === id) {
+                //     return false
+                // }
+                // this.lastRemovedId = id
+                if (this.$eventHub) {
+                    this.$eventHub.$emit('event-widget-kill-request', id)
+                    //this.eventBus.$emit('event-widget-kill-request', id)
+                }
+                // this.$destroy()
+            },
             createStyle: function () {
                 if (this.x + this.w > this.cols) {
                     this.innerX = 0;
@@ -426,8 +477,8 @@
 
                 if (this.isDragging) {
                     pos.top = this.dragging.top;
-//                    Add rtl support
-                    if (this.renderRtl) {
+
+                    if (this.renderRtl) { //                    Add rtl support
                         pos.right = this.dragging.left;
                     } else {
                         pos.left = this.dragging.left;
@@ -440,17 +491,17 @@
 
                 let style;
                 // CSS Transforms support (default)
-                if (this.useCssTransforms) {
-//                    Add rtl support
-                    if (this.renderRtl) {
+                if (this.cssTransforms) {
+
+                    if (this.renderRtl) { //                    Add rtl support
                         style = setTransformRtl(pos.top, pos.right, pos.width, pos.height);
                     } else {
                         style = setTransform(pos.top, pos.left, pos.width, pos.height);
                     }
 
                 } else { // top,left (slow)
-//                    Add rtl support
-                    if (this.renderRtl) {
+
+                    if (this.renderRtl) { //                    Add rtl support
                         style = setTopRight(pos.top, pos.right, pos.width, pos.height);
                     } else {
                         style = setTopLeft(pos.top, pos.left, pos.width, pos.height);
@@ -688,10 +739,14 @@
 
                 return {x, y};
             },
+            // Added: compute col as fixed value
             // Helper for generating column width
             calcColWidth() {
+                //if (this.colWidth) {
+                //    return this.coldWidth;
+                //}
                 const colWidth = (this.containerWidth - (this.margin[0] * (this.cols + 1))) / this.cols;
-               // console.log("### COLS=" + this.cols + " COL WIDTH=" + colWidth + " MARGIN " + this.margin[0]);
+                //console.log("### COLS=" + this.cols + " COL WIDTH=" + this.colWidth + " MARGIN " + this.margin[0]);
                 return colWidth;
             },
 
@@ -732,7 +787,7 @@
                 if (this.draggable && !this.static) {
                     const opts = {
                         ignoreFrom: this.dragIgnoreFrom,
-                        allowFrom: this.dragAllowFrom
+                        allowFrom: this.allowFrom
                     };
                     this.interactObj.draggable(opts);
                     /*this.interactObj.draggable({allowFrom: '.vue-draggable-handle'});*/
@@ -830,6 +885,7 @@
                     this.$emit("resize", this.i, pos.h, pos.w, newSize.height, newSize.width);
                 }
                 if (this.previousW !== pos.w || this.previousH !== pos.h) {
+                    // watch here, this.$emit should be this.eventBus.$emit???
                     this.$emit("resized", this.i, pos.h, pos.w, newSize.height, newSize.width);
                     this.eventBus.$emit("resizeEvent", "resizeend", this.i, this.innerX, this.innerY, pos.h, pos.w);
                 }
